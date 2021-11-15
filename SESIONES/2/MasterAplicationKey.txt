@@ -1,0 +1,27 @@
+keyID:
+d46912ffbafd
+keyName:
+Master Application Key
+applicationKey:
+0024c7048622396471c7c2df1c5479bf79f743e504
+
+
+"applicationKeyId:applicationKey"
+d46912ffbafd:0024c7048622396471c7c2df1c5479bf79f743e504
+
+Bucket ID:7d94e629e1421f9f7bda0f1d
+
+Base64 FORMAT
+ZDQ2OTEyZmZiYWZkOjAwMjRjNzA0ODYyMjM5NjQ3MWM3YzJkZjFjNTQ3OWJmNzlmNzQzZTUwNA==
+
+https://api.backblazeb2.com/b2api/v2/b2_authorize_account
+
+"authorizationToken": "4_002d46912ffbafd0000000000_01a04950_2723f2_acct_wlR7j-l7S9zB6gptbuzoVqE3NJ0="
+
+
+//rESPUESTA DEL POST
+{
+    "authorizationToken": "4_002d46912ffbafd0000000000_01a0496c_2e69f7_upld_gx0xJXQNycB4qw7uMTVJchVyXXE=",
+    "bucketId": "7d94e629e1421f9f7bda0f1d",
+    "uploadUrl": "https://pod-000-1168-19.backblaze.com/b2api/v2/b2_upload_file/7d94e629e1421f9f7bda0f1d/c002_v0001168_t0040"
+}
