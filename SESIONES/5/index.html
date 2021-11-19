@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de información para la identificación de jugadores de la selección Colombia con bajo rendimiento
+    </title>
+</head>
+<!-- En este componente manejamos las librerías de CSS y JS provenientes de bootstrap -->
+<body>
+    <header>
+        <!--Este es uno de los componentes principales, aquí se encuentran las barras superiores y cabeceras-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Clase</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Aquí se encuentra el contenido crucial de la página, despliegues de menús, perfiles y entre otros -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 mx-auto">
+                    <form action="" method="post">
+
+
+                        <div class="form-group">
+                            <label for="doc" class="form-label">Número Documento:</label>
+                            <input type="number" class="form-control" id="doc" placeholder="32222">
+                        </div>
+                        <div class="form-group">
+                            <label for="nomb" class="form-label">Nombre de usuario:</label>
+                            <input type="text" class="form-control" id="nomb" placeholder="Andrés Polanía">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel" class="form-label">Número de teléfono:</label>
+                            <input type="number" class="form-control" id="tel" placeholder="322222222222">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico:</label>
+                            <input type="email" class="form-control" id="email" placeholder="pepe@correo.com">
+                        </div>
+                        <div class="mt-2">
+                            <button type="button" class="btn btn-primary">GUARDAR</button>
+                            <button type="button" data-bs-target="#modalA" data-bs-toggle="modal"
+                                class="btn btn-secondary">LISTAR</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <style>
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Aquí se encuentra el contenido del pie de página -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Ciclo 4 :)
+            <a class="text-dark" href="https://google.com/">Google.com</a>
+        </div>
+    </footer>
+</body>
+<!-- Este es el modal, un menú estilo pop-up o borbuja que se despliega al darle al botón listar -->
+<div class="modal" id="modalA" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
+<!--Se cargan los archivos para que estos sean cargados según su necesidad y que primero se carguen los contenidos-->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<script src="../js/bootstrap.bundle.min.js"></script>
+<!-- Los contenidos de estos archivos fueron descargados desde los links que se encuentran en el archivo linksYnombresDeLosArchivos.txt
+Ahí encontrará otros instructivos para cargarlos -->
