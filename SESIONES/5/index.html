@@ -78,9 +78,9 @@
                             <input type="email" class="form-control" id="email" placeholder="pepe@correo.com">
                         </div>
                         <div class="mt-2">
-                            <button type="button" class="btn btn-primary">GUARDAR</button>
+                            <button type="button" class="btn btn-primary" onclick="guardar()">GUARDAR</button>
                             <button type="button" data-bs-target="#modalA" data-bs-toggle="modal"
-                                class="btn btn-secondary">LISTAR</button>
+                                class="btn btn-secondary" onclick="listar()">LISTAR</button>
                         </div>
 
 
@@ -117,7 +117,32 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <table class="table table-dark table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Correo</th>
+                      </tr>
+                    </thead>
+                    <tbody id="contenido">
+                      
+                    </tbody>
+                  </table>
+                <!-- <table>
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenido">
+                        
+                    </tbody>
+                </table> -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -131,5 +156,6 @@
 <!--Se cargan los archivos para que estos sean cargados según su necesidad y que primero se carguen los contenidos-->
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/index.js"></script>
 <!-- Los contenidos de estos archivos fueron descargados desde los links que se encuentran en el archivo linksYnombresDeLosArchivos.txt
 Ahí encontrará otros instructivos para cargarlos -->
