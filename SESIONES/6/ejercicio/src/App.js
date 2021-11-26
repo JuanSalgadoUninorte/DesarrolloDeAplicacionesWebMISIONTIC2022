@@ -2,7 +2,9 @@
 // import './App.css';
 //Así se importan las funciones nativas de react
 import { useState } from "react";
+import { Modal } from "./components/Modal";
 import { Jugadores } from './Jugadores';
+
 
 export default function App() { 
   const jugadores = [
@@ -46,7 +48,11 @@ export default function App() {
     //así funciona el input
     <div>
 
-      <input type="text" placeholder="Nombre del jugador" onChange={buscarJugador} />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-6 col-lg-6">
+          <input type="text" className="form-control" placeholder="Nombre del jugador" onChange={buscarJugador} />
+          <Modal />
       {/* aquí mapeamos o tratamos el array para poderlo leer uno a uno, elemento a elemento
       se comenta de la manera llave/asterísco/slash/comentario/slash/asterísco/llave/ */}
       {/* {jugadores.map(a=> */}
@@ -59,5 +65,10 @@ export default function App() {
         PasesErrados = {a.PasesErrados} />
       )}
     </div>
+          </div>
+        </div>
+      </div>
+
+      
   );
 }
