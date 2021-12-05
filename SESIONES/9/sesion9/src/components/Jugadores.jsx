@@ -25,6 +25,23 @@ export function Jugadores() {
         posicion.current.value = "";
         //setTimeout(() => setAlerta(false), 3000);
     }
+
+    function consultar(){
+        // var nombre = document.getElementById("nom").value;
+        var nombre = nombreJugador.current.value;
+        //Recupero la caja de texto
+        //Ahora me voy a la API
+        fetch(`http://localhost:8081/jugadores/${nombre}`)
+        //fetch no va con ";"
+        //Lo que recupero de la caja de texto ^; fetch, genera una promesa
+        //Generamos una cadena de promesas para obtener lo deseados
+        .then(res=>res.json())//ahora vamos a cumplir la promesa
+        .then(res=>{
+            posicion.current.value = res.Posicion;
+            camisetaJugador.current.value = res.Dorsal;
+    });
+
+    }
  
     return (
         <>
@@ -47,6 +64,7 @@ export function Jugadores() {
                     <Link to="/listado">
                     <button type="button" className="btn btn-primary mb-3 m-2 mt-3">Listar</button>
                     </Link>
+                    <button type="button" onClick={consultar} className="btn btn-Consultar mb-3 m-2 mt-3">Listar</button>
                 </div>
             </form>
         </>

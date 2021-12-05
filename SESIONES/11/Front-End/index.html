@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="">Nombre Jugador: 
+                <input type="text" name="" id="nom">
+            </label>
+        </div>
+        <div>
+            <label for="">Posición:
+                <input type="text" name="" id="pos">
+            </label>
+        </div>
+            <label for="">Dorsal:
+                <input type="text" name="" id="num">
+            </label>
+        <div>
+            <button type="button" onclick="consultar()">Consultar</button>
+            <button type="button" onclick="guardar()">Guardar</button>
+            <button type="button" onclick="actualizar()">Actualizar</button>
+            <button type="button" onclick="eliminar()">Eliminar</button>
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    var host = "http://localhost:8081/";
+
+    function eliminar(){
+        //1°Capturar Datos
+        var nombre = document.getElementById("nom").value;
+        //2°Mandar datos al servidor
+        fetch(`${host}eliminar`, {
+            headers:{"content-type": "application/json"}, //Qué voy a enviar
+            method: "POST",//Cómo lo voy a evniar
+            body: JSON.stringify({//Información a enviar
+                nombre
+            })
+        })
+            //obtención de datos
+            .then(datos=>datos.json())//genera otra promesa, sin respuesta
+            .then(datos=>alert(datos.msg))
+            .catch(error=>alert(error)) 
+   }
+   
+
+    function actualizar(){
+         //1°Capturar Datos
+         var nombre = document.getElementById("nom").value;
+         var dorsal = document.getElementById("num").value;
+         var posicion = document.getElementById("pos").value;
+         //2°Mandar datos al servidor
+         fetch(`${host}actualizar`, {
+             headers:{"content-type": "application/json"}, //Qué voy a enviar
+             method: "POST",//Cómo lo voy a evniar
+             body: JSON.stringify({//Información a enviar
+                 nombre, dorsal, posicion
+             })
+         })
+             //obtención de datos
+             .then(datos=>datos.json())//genera otra promesa, sin respuesta
+             .then(datos=>alert(datos.msg))
+             .catch(error=>alert(error)) 
+    }
+    
+    function guardar(){
+        //1°Capturar Datos
+        var nombre = document.getElementById("nom").value;
+        var dorsal = document.getElementById("num").value;
+        var posicion = document.getElementById("pos").value;
+        //2°Mandar datos al servidor
+        fetch(`${host}guardar`, {
+            headers:{"content-type": "application/json"}, //Qué voy a enviar
+            method: "POST",//Cómo lo voy a evniar
+            body: JSON.stringify({//Información a enviar
+                nombre, dorsal, posicion
+            })
+        })
+            //obtención de datos
+            .then(datos=>datos.json())//genera otra promesa, sin respuesta
+            .then(datos=>alert(datos.msg))
+            .catch(error=>alert(error))
+    }
+
+    function consultar(){
+        var nombre = document.getElementById("nom").value;
+        //Recupero la caja de texto
+        //Ahora me voy a la API
+        fetch(`http://localhost:8081/jugadores/${nombre}`)
+        //fetch no va con ";"
+        //Lo que recupero de la caja de texto ^; fetch, genera una promesa
+        //Generamos una cadena de promesas para obtener lo deseados
+        .then(res=>res.json())//ahora vamos a cumplir la promesa
+        .then(res=>{
+            document.getElementById("pos").value = res.Posicion;
+            document.getElementById("num").value = res.Dorsal;
+    });
+
+    }
+
+</script>
