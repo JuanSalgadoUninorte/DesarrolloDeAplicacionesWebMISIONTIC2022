@@ -64,7 +64,7 @@ export function Jugadores() {
                     <Link to="/listado">
                     <button type="button" className="btn btn-primary mb-3 m-2 mt-3">Listar</button>
                     </Link>
-                    <button type="button" onClick={consultar} className="btn btn-Consultar mb-3 m-2 mt-3">Listar</button>
+                    <button type="button" onClick={consultar} className="btn btn-primary mb-3 m-2 mt-3">Consultar</button>
                 </div>
             </form>
         </>
