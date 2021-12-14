@@ -36,13 +36,13 @@
 
     function eliminar(){
         //1°Capturar Datos
-        var nombre = document.getElementById("nom").value;
+        var Nombre = document.getElementById("nom").value;
         //2°Mandar datos al servidor
         fetch(`${host}eliminar`, {
             headers:{"content-type": "application/json"}, //Qué voy a enviar
             method: "POST",//Cómo lo voy a evniar
             body: JSON.stringify({//Información a enviar
-                nombre
+                Nombre
             })
         })
             //obtención de datos
@@ -54,15 +54,15 @@
 
     function actualizar(){
          //1°Capturar Datos
-         var nombre = document.getElementById("nom").value;
-         var dorsal = document.getElementById("num").value;
-         var posicion = document.getElementById("pos").value;
+         var Nombre = document.getElementById("nom").value;
+         var Dorsal = document.getElementById("num").value;
+         var Posicion = document.getElementById("pos").value;
          //2°Mandar datos al servidor
          fetch(`${host}actualizar`, {
              headers:{"content-type": "application/json"}, //Qué voy a enviar
              method: "POST",//Cómo lo voy a evniar
              body: JSON.stringify({//Información a enviar
-                 nombre, dorsal, posicion
+                 Nombre, Dorsal, Posicion
              })
          })
              //obtención de datos
@@ -73,17 +73,17 @@
     
     function guardar(){
         //1°Capturar Datos
-        var nombre = document.getElementById("nom").value;
-        var dorsal = document.getElementById("num").value;
-        var posicion = document.getElementById("pos").value;
+        var Nombre = document.getElementById("nom").value;
+        var Dorsal = document.getElementById("num").value;
+        var Posicion = document.getElementById("pos").value;
         //2°Mandar datos al servidor
         fetch(`${host}guardar`, {
             headers:{"content-type": "application/json"}, //Qué voy a enviar
             method: "POST",//Cómo lo voy a evniar
             body: JSON.stringify({//Información a enviar
-                nombre, dorsal, posicion
+                Nombre, Dorsal, Posicion
             })
-        })
+        }) 
             //obtención de datos
             .then(datos=>datos.json())//genera otra promesa, sin respuesta
             .then(datos=>alert(datos.msg))
@@ -91,17 +91,23 @@
     }
 
     function consultar(){
-        var nombre = document.getElementById("nom").value;
+        var Nombre = document.getElementById("nom").value;
         //Recupero la caja de texto
         //Ahora me voy a la API
-        fetch(`http://localhost:8081/jugadores/${nombre}`)
+        fetch(`http://localhost:8081/consultar/`, {
+            headers:{"content-type": "application/json"}, //Qué voy a enviar
+            method: "POST",//Cómo lo voy a evniar
+            body: JSON.stringify({//Información a enviar
+                Nombre
+            })
+        })
         //fetch no va con ";"
         //Lo que recupero de la caja de texto ^; fetch, genera una promesa
         //Generamos una cadena de promesas para obtener lo deseados
         .then(res=>res.json())//ahora vamos a cumplir la promesa
         .then(res=>{
-            document.getElementById("pos").value = res.Posicion;
-            document.getElementById("num").value = res.Dorsal;
+            document.getElementById("pos").value = res.dato.Posicion;
+            document.getElementById("num").value = res.dato.Dorsal;
     });
 
     }
