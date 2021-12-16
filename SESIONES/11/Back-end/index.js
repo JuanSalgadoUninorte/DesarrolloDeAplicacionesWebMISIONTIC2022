@@ -12,10 +12,12 @@ const { jugadorRutas } = require("./rutas/jugadorRutas");
 app.use("/jugadores", jugadorRutas);//<-prefijo
 
 const { usuarioRutas } = require("./rutas/usuarioRutas");
-app.use("/usuario", usuarioRutas);//<-prefijo
+app.use("/usuario", usuarioRutas);//<-
+
+require("dotenv").config();
 
 //Conexión a DB en MongoDB
-mongoose.connect("mongodb://localhost:27017/Jugadores")
+mongoose.connect("mongodb://localhost:27017/colombia")
 .then(res=>console.log("¡ESTOY CONECTADO A LA DB!"))
 .catch(err=>console.log("¡ERROR!", err))
 //Conexión a DB en MongoDB
